@@ -14,7 +14,7 @@ public class Save extends Method {
         try {
             String dir = Utils.getLocalMinecraftPath();
 
-            File configFile = new File(dir, "\\fractal\\" + (String) module.getVal("Config name") + ".txt");
+            File configFile = new File(dir, "/fractal/" + (String) module.getVal("Config name") + ".txt");
 
             if (!configFile.exists()) {
                 configFile.createNewFile();

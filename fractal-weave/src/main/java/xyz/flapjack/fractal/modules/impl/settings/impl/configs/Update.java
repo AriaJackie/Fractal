@@ -14,7 +14,7 @@ public class Update extends Method {
         try {
             String dir = Utils.getLocalMinecraftPath();
 
-            File configFile = new File(dir, "\\fractal\\" + (String) module.getVal("Config") + ".txt");
+            File configFile = new File(dir, "/fractal/" + (String) module.getVal("Config") + ".txt");
 
             if (configFile.exists()) {
                 FileWriter writer = new FileWriter(configFile);
