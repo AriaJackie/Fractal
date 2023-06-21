@@ -37,7 +37,7 @@ public class Configs extends Module {
                 while (true) {
                     if (!this.getVal("Config").equals(this.lastConfig)) {
                         try {
-                            this.update(new File(Utils.getLocalMinecraftPath() + "\\fractal\\" + (String) this.getVal("Config") + ".txt"), (String) this.getVal("Config"));
+                            this.update(new File(Utils.getLocalMinecraftPath() + "/fractal/" + (String) this.getVal("Config") + ".txt"), (String) this.getVal("Config"));
 
                         } catch (Exception ignored) { }
 
@@ -133,7 +133,7 @@ public class Configs extends Module {
         ArrayList<String> options = new ArrayList<>();
 
         try {
-            DirectoryStream<Path> stream = Files.newDirectoryStream(Path.of(Utils.getLocalMinecraftPath() + "\\fractal"));
+            DirectoryStream<Path> stream = Files.newDirectoryStream(Path.of(Utils.getLocalMinecraftPath() + "/fractal"));
 
             for (Path path: stream) {
                 String name = path.getFileName().toString().substring(0, path.getFileName().toString().lastIndexOf('.'));

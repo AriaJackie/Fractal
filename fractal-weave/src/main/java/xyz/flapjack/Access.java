@@ -245,10 +245,10 @@ public class Access {
              * This is for future proofing when a duel event bus and shading system is implemented.
              */
             if (User.os == User.OS.MacOS)
-                return System.getenv("user.home") + "/Library/Application Support/minecraft";
+                return System.getenv("HOME") + "/Library/Application Support/minecraft";
 
             if (User.os == User.OS.Linux)
-                return System.getenv("user.home") + "/.minecraft";
+                return System.getenv("HOME") + "/.minecraft";
 
             if (User.os == User.OS.Windows)
                 return System.getenv("appdata") + "/.minecraft";
